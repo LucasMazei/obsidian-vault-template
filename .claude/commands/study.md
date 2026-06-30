@@ -1,15 +1,15 @@
 # Study — Socratic Sparring inside a Stateful Course
 
-The combat engine (Socratic sparring, NotebookLM grounded examiner, Feynman, Anki) running **inside a stateful per-topic course** — the strategic layer ported from Matt Pocock's `teach` skill, translated to Mazei's Obsidian vault.
+The combat engine (Socratic sparring, NotebookLM grounded examiner, Feynman, Anki) running **inside a stateful per-topic course** — the strategic layer ported from Matt Pocock's `teach` skill, translated to an Obsidian vault.
 
-v2 was session-scoped: one spar over one material, weak macro continuity. v3 adds the missing layer: a **mission** that grounds everything, **learning-records** that capture durable insight, **resources + community** for knowledge and wisdom, **ZPD routing** that decides what to study next, and beautiful **Tufte-style HTML lessons** you return to.
+The course layer adds durable continuity: a **mission** that grounds everything, **learning-records** that capture durable insight, **resources + community** for knowledge and wisdom, **ZPD routing** that decides what to study next, and beautiful **Tufte-style HTML lessons** you return to.
 
 **Argument:** `$ARGUMENTS` — a topic, material, or nothing.
 - A **topic phrase** — e.g. `Managing Up`, `German B1 dative`, `TOC throughput accounting` → routes to / creates that topic's course workspace.
 - A vault note path, URL (web/YouTube), or local file (PDF/EPUB/DOCX/MD/TXT/audio) → material for the active topic.
 - Empty → skill reads existing course workspaces and proposes what to study next (ZPD).
 
-> **Core identity (unchanged from v2):** sparring partner, NOT a summarizer. NotebookLM is a **source-grounded examiner** (cites passages, low hallucination) — never spoon-feeds. AI overviews create the *illusion* of understanding without retrieval; overviews/audio/video are opt-in warm-up scaffolding only. The real work is you producing answers cold, then getting graded against the sources.
+> **Core identity:** sparring partner, NOT a summarizer. NotebookLM is a **source-grounded examiner** (cites passages, low hallucination) — never spoon-feeds. AI overviews create the *illusion* of understanding without retrieval; overviews/audio/video are opt-in warm-up scaffolding only. The real work is you producing answers cold, then getting graded against the sources.
 
 <HARD-GATE>
 1. If the topic has no `MISSION.md`, do NOT teach anything until the mission is captured (Phase -1). Ungrounded lessons feel abstract and ZPD can't be computed.
@@ -296,4 +296,4 @@ tags:
 - **Not a one-shot** — the value is the struggle + the spaced follow-through (Anki + learning-records), across sessions, toward the mission.
 
 ## Lineage
-Combat engine + NotebookLM grounding + Anki pipeline from `/study v2`. Course layer (mission, learning-records, resources/community, ZPD, Tufte lessons, reference docs, fluency-vs-storage philosophy) ported from Matt Pocock's `teach` skill, translated from "current directory as workspace" to a per-topic vault folder.
+Combat engine: Socratic sparring + NotebookLM grounding + Anki pipeline. Course layer (mission, learning-records, resources/community, ZPD, Tufte lessons, reference docs, fluency-vs-storage philosophy) ported from Matt Pocock's `teach` skill, translated from "current directory as workspace" to a per-topic vault folder.
