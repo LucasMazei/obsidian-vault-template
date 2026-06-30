@@ -1,0 +1,10 @@
+# Obsidian per-machine / session state (regenerated locally)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/plugins/*/data.json
+.obsidian/cache
+
+# OS / editor cruft
+.DS_Store
+.trash/
