@@ -124,7 +124,7 @@ try {
 // ===== Hábitos (streak ao vivo, dos daily journals) =====
 try {
   const DT = dv.luxon.DateTime;
-  const habits = [["🏋️","Exercise"],["🗣️","Language Learning"],["📖","Reading"],["🥗","Healthy Eating"],["🙏","Culto Familiar"]];
+  const habits = [["🏋️","Exercise"],["🗣️","Language Learning"],["📖","Reading"],["🥗","Healthy Eating"]];
   const days = dv.pages('"5. Daily Journal"').where(p => p.file.day).array()
     .map(p => ({ date: p.file.day.toISODate(), done: (p.file.tasks || []).filter(t => t.completed).map(t => t.text.trim()) }));
   const doneSet = name => new Set(days.filter(d => d.done.some(t => t === name || t.startsWith(name))).map(d => d.date));
