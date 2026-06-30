@@ -1,0 +1,5 @@
+{
+  "saved_messages_user_id": null,
+  "last_read_iso": null,
+  "note": "Set saved_messages_user_id to your Telegram user id (Saved Messages = capture inbox). Only used if you enable the telegram MCP."
+}

@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "google-workspace": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["workspace-mcp", "--tool-tier", "complete", "--single-user"],
+      "env": {
+        "GOOGLE_OAUTH_CLIENT_ID": "<YOUR_GOOGLE_OAUTH_CLIENT_ID>",
+        "GOOGLE_OAUTH_CLIENT_SECRET": "<YOUR_GOOGLE_OAUTH_CLIENT_SECRET>",
+        "USER_GOOGLE_EMAIL": "<your-email@example.com>"
+      }
+    },
+    "notebooklm-mcp": {
+      "type": "stdio",
+      "command": "notebooklm-mcp",
+      "args": [],
+      "env": {}
+    },
+    "telegram": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["mcp-telegram", "start"],
+      "env": {
+        "API_ID": "<YOUR_TELEGRAM_API_ID>",
+        "API_HASH": "<YOUR_TELEGRAM_API_HASH>"
+      }
+    },
+    "linear-server": {
+      "type": "http",
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp",
+      "headers": {
+        "Authorization": "Bearer <YOUR_GITHUB_TOKEN>"
+      }
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@playwright/mcp@latest", "--caps", "video"],
+      "env": {}
+    }
+  }
+}

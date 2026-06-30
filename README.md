@@ -13,6 +13,15 @@ A clean starter clone of Mazei's vault structure. Open this folder as a vault in
 - **Working Home dashboard** — `Home.md`, a `dataviewjs` homepage (greeting, vault heatmap, area cards, countdowns, habit streaks, goals, reading shelf)
 - **Obsidian config** (`.obsidian/`) — plugins + theme + the `home` CSS snippet pre-enabled
 - **Templates** (`7. Templates/`) — Daily Note, Book, Article, Goal, Presentation, AI Chat, Weekly Journal, New Note
+- **Example notes** — demo dailies, books, goals, articles, an event, and a study course so every Home widget renders out of the box (clear them anytime)
+- **Claude Code skills** (`.claude/`) — `/setup`, `/daily`, `/shutdown`, `/friday-30`, `/study` (see [`.claude/README.md`](.claude/README.md)) + recommended MCP servers ([`.claude/MCP.md`](.claude/MCP.md))
+
+## Quick start
+
+1. **Open in Obsidian** — open this folder as a vault. Trust plugins; enable Dataview's *JavaScript Queries* (`Settings → Dataview`).
+2. **Open `Home.md`** — the dashboard should render with demo data.
+3. **Run `/setup` in Claude Code** — it interviews you, writes your context (`CLAUDE.md`, `0. Context/...`, goals), and wires the skills to your vault path.
+4. **Add MCPs** (optional) — copy `.mcp.json.example` → `.mcp.json`, fill in your credentials. See [`.claude/MCP.md`](.claude/MCP.md).
 
 ## Folder map
 

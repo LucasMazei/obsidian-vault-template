@@ -1,0 +1,7 @@
+{
+  "multiplier": 1.5,
+  "last_calibrated": null,
+  "sample_size": 0,
+  "ratio_history": [],
+  "note": "Default 1.5x until >=5 clean samples (estimate vs actual) are captured at /shutdown."
+}
