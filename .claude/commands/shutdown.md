@@ -39,8 +39,8 @@ ToolSearch("select:AskUserQuestion,mcp__google-workspace__get_events,mcp__google
 | Tasks (update) | `mcp__google-workspace__manage_task` |
 | Calendar (create) | `mcp__google-workspace__manage_event` |
 
-**Google email:** `lucas.mazei@v4company.com`
-**Task list IDs:** Pessoal = `VGZfdXE0NjZkUEplYmtTeA` · V4 Company = `N1VYWldUWmlxYmRvWXE4bg` · Delegated = `TGRUYlBncjU3UUpTYm51Sg`
+**Google email:** _your email (set in `CLAUDE.md`)_
+**Task lists:** discover at runtime via `list_task_lists` — do not hardcode IDs.
 **Vault root:** `{{VAULT_ROOT}}`
 **Journal path:** `5. Daily Journal/YYYY-MM-DD.md`
 **Mental Inventory:** `0. Context/Active/Mental Inventory.md`
@@ -68,7 +68,7 @@ Fetch everything in parallel. Don't show raw results.
    - Extract morning task snapshot
    - Extract "Biggest Thing Today"
    - Extract habits checklist
-2. **Current tasks** — Fetch from both lists (Pessoal + V4 Company), show_completed=false
+2. **Current tasks** — Fetch from your task lists (via `list_task_lists`), show_completed=false
 3. **Today's calendar** — Fetch today's final events
 4. **Tomorrow's calendar** — Fetch tomorrow's events
 5. **Tomorrow's tasks** — Tasks due tomorrow (due_max filter)
@@ -106,7 +106,7 @@ Fetch everything in parallel. Don't show raw results.
 Este state file é o que dispara a Aging Gate no /daily do dia seguinte (streak ≥3).
 
 ### 2b. Habits Check
-- Show today's habits checklist (Language Learning, Reading, Exercise, Healthy Eating, Culto Familiar)
+- Show today's habits checklist (Language Learning, Reading, Exercise, Healthy Eating)
 - Use `AskUserQuestion` (multiSelect: true) to mark which were completed
 - Update the journal's habits section with [x] for completed ones
 
@@ -170,7 +170,7 @@ For items that already have dates and next actions, batch-confirm:
 **3c1. Telegram captures (se houver):** Se Phase 1 step 7 trouxe mensagens, surface uma por uma:
 > "Você capturou no Telegram às {time}: \"{texto}\". Pra onde?"
 
-`AskUserQuestion`: `Pessoal (GTask)` / `V4 (GTask)` / `Mental Inventory` / `Study Queue` / `Lixo`. Aplicar via `manage_task` ou append no arquivo certo.
+`AskUserQuestion`: `Pessoal (GTask)` / `Work (GTask)` / `Mental Inventory` / `Study Queue` / `Lixo`. Aplicar via `manage_task` ou append no arquivo certo.
 
 **3c2. Brain dump final:**
 > "Anything still nagging you that we haven't covered?"

@@ -2,7 +2,7 @@
 
 The non-negotiable 30-min Friday ritual that calibrates the whole capacity-aware system. Spawned by `/daily` on Fridays (Phase 3e). Without this, the system drifts and the multiplier stays uncalibrated.
 
-Reference: Rule 6 of Mazei's Day Model — `1. Rough Notes/2026-05-14 - Task Capacity Deep Research.html`.
+Reference: Rule 6 of the capacity-aware Day Model — calibrate future estimates from this week's actuals.
 
 <HARD-GATE>
 Required phases (não pular):
@@ -84,7 +84,7 @@ Pra cada item 🟡 ou 🔴, `AskUserQuestion`:
 | 🔴 Dead | **Schedule** / **Delegate** / **Kill** — **sem Keep** |
 
 Aplicar:
-- **Schedule** → `manage_task` create na lista origem (V4/Pessoal), com due date + estimate (perguntar)
+- **Schedule** → `manage_task` create na lista origem (Work/Pessoal), com due date + estimate (perguntar)
 - **Delegate** → mover item pra § On Hold, adicionar nota "Waiting on {pessoa}"
 - **Kill** → mover pra § 🗑️ Cleared com timestamp + reason
 - **Keep + bump** (só 🟡) → atualiza `Last updated` do item
@@ -146,9 +146,9 @@ Read `.claude/state/maker-am-skip-until.json` (se existir):
 - Senão segue.
 
 ### C.2.5 Check existing calendar blocks (ANTES de oferecer criar)
-**O Mazei já mantém o bloco de Maker AM no calendário com nome próprio: `🌊 Flow (no meetings)` 09:00–11:00, recorrente Tue + Thu.** Esse bloco É o Maker AM — não precisa criar nada.
+**If you keep a recurring Maker AM focus block on your calendar (e.g. `🌊 Flow (no meetings)` 09:00–11:00, recurring Tue + Thu), that block IS the Maker AM — no need to create anything.**
 
-Pra cada uma de `{NEXT_TUE}` e `{NEXT_THU}`, `get_events` (07:00–13:00) e procura um bloco de foco já existente (match por: `🌊 Flow`, `Flow (no meetings)`, `Maker`, ou qualquer block AM de foco sem attendees criado pelo próprio Mazei).
+Pra cada uma de `{NEXT_TUE}` e `{NEXT_THU}`, `get_events` (07:00–13:00) e procura um bloco de foco já existente (match por: `🌊 Flow`, `Flow (no meetings)`, `Maker`, ou qualquer block AM de foco sem attendees criado por você).
 - Se **ambos** os dias já têm bloco → Phase C satisfeita. Registra _"Maker AM já no calendário (🌊 Flow 09–11 Tue+Thu) — nada a criar."_ e pula pra Phase D.
 - Se **só um** dia tem → oferece criar só o que falta (C.3).
 - Se **nenhum** → segue C.3 normal.
@@ -183,7 +183,7 @@ Revisão semanal das metas anuais — mantém o `current` vivo (que alimenta o w
 - Ler notas `#goal` do ano corrente em `6. Projects/The Biggest Project (me)/Yearly Planning/{YEAR}/Goals/` (frontmatter: `type`, `current`, `target`, `direction`, e opcionais `start`, `habit`, `period`, `metric`, `since`).
 - **Separar:**
   - **Manuais** = metas SEM `habit` (current é editado à mão). São as que entram na atualização.
-  - **Automáticas** = metas com `habit` (ex.: Culto, `metric: adherence`) — progresso vem dos dailies, NÃO perguntar/editar. Só exibir.
+  - **Automáticas** = metas com `habit` (ex.: `metric: adherence`) — progresso vem dos dailies, NÃO perguntar/editar. Só exibir.
 
 ### G.2 Display progresso
 Tabela compacta agrupada por categoria (mesma ordem do widget: Espiritual → Relacionamento → Saúde → Financeiro → Carreira → Intelectual → Pessoal):
@@ -206,7 +206,7 @@ Tabela compacta agrupada por categoria (mesma ordem do widget: Espiritual → Re
 
 ### D.1 Surface candidates
 Pull:
-- Tasks com due na próxima semana (V4 + Pessoal) — `list_tasks` com `due_min/max`
+- Tasks com due na próxima semana (Work + Pessoal) — `list_tasks` com `due_min/max`
 - Items 🟢/🟡 do Mental Inventory § Open Loops com peso estratégico
 - Carry-overs ativos do `carry-overs.json` (se streak ≥1, deve ser priorizado ou matado)
 - **Metas paradas da Phase G** (mover uma meta de 2026 que não anda — alta alavanca)
